@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_16_214320) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_18_222344) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_16_214320) do
     t.string "twitter_handle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+    t.string "url"
+    t.index ["status"], name: "index_events_on_status"
   end
 
 end
