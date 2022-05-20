@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: ruby_events_api_production
   username: ruby_events_api
   password: <%= ENV["RUBY_EVENTS_API_DATABASE_PASSWORD"] %>
