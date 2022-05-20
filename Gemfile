@@ -20,3 +20,5 @@ gem "nokogiri", "~> 1.13"
 gem "pry", "~> 0.14.1"
 
 gem "standardrb", "~> 1.0"
+
+gem "good_job", "~> 2.15"
