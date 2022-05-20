@@ -11,7 +11,7 @@ Rails.application.configure do
     shutdown_timeout: 25,
     enable_cron: true,
     cron: {
-      scrape_event: {
+      scrape_events_job: {
         cron: "* * * * *",
         class: "ScrapeEventsJob"
       }
