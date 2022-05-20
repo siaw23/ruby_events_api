@@ -15,3 +15,8 @@ end
 
 group :development do
 end
+
+gem "nokogiri", "~> 1.13"
+gem "pry", "~> 0.14.1"
+
+gem "standardrb", "~> 1.0"
