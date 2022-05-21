@@ -14,6 +14,10 @@ Rails.application.configure do
       scrape_events_job: {
         cron: Rails.env == "production" ? "0 0 */3 * *" : "* * * * *",
         class: "ScrapeEventsJob"
+      },
+      retire_event_job: {
+        cron: "0 0 * * *",
+        class: "RetireEventJob"
       }
     }
   }

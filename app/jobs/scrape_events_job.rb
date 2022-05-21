@@ -7,13 +7,12 @@ class ScrapeEventsJob < ApplicationJob
     end
     # TODO: Could use some refactoring
     events.each do |event|
-      Event.find_or_create_by(
-        name: event[:name],
+      Event.create_with(
         start_date: Date.parse(DateSplitter.parse(event[:date]).join(",").split(",").first),
         end_date: Date.parse(DateSplitter.parse(event[:date]).join(",").split(",").last),
         venue: event[:location],
         twitter_handle: event[:twitter_handle]
-      )
+      ).find_or_create_by(name: event[:name])
     end
   end
 end
