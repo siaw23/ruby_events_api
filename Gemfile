@@ -13,7 +13,7 @@ gem "pry", "~> 0.14.1"
 gem "standardrb", "~> 1.0"
 gem "good_job", "~> 2.15"
 gem "active_model_serializers", "~> 0.10.13"
-
+# gem "xco_date", path: "/Users/siaw23/Desktop/xco_date"
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 end

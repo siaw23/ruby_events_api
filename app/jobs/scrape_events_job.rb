@@ -5,12 +5,12 @@ class ScrapeEventsJob < ApplicationJob
     events = Scraper::RubyConferences.scraped_events.map do |ary|
       Scraper::Transformer.new(ary).hashify
     end
-
+    # TODO: Could use some refactoring
     events.each do |event|
       Event.find_or_create_by(
         name: event[:name],
-        start_date: DateTime.new(2001, 2, 3),
-        end_date: DateTime.new(2002, 2, 3),
+        start_date: Date.parse(DateSplitter.parse(event[:date]).join(",").split(",").first),
+        end_date: Date.parse(DateSplitter.parse(event[:date]).join(",").split(",").last),
         venue: event[:location],
         twitter_handle: event[:twitter_handle]
       )
