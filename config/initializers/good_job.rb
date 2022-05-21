@@ -12,7 +12,7 @@ Rails.application.configure do
     enable_cron: true,
     cron: {
       scrape_events_job: {
-        cron: "* * * * *",
+        cron: Rails.env == "production" ? "0 0 */3 * *" : "* * * * *",
         class: "ScrapeEventsJob"
       }
     }
