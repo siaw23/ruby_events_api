@@ -15,7 +15,6 @@ class ScrapeEventsJob < ApplicationJob
       ).find_or_create_by(name: event[:name])
     end
   end
-end
 
 # Scraper::RubyConferences.scraped_events.map do |ary|
 #   Scraper::Transformer.new(ary).hashify
