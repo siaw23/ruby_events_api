@@ -16,7 +16,7 @@ Rails.application.configure do
         class: "ScrapeEventsJob"
       },
       retire_event_job: {
-        cron: "0 0 * * *",
+        cron: "0 0 0 * * *",
         class: "RetireEventJob"
       }
     }
